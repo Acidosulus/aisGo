@@ -1,0 +1,38 @@
+
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="/assets/css/styles.css" />
+	<link rel="shortcut icon" type="image/png" href="/assets/images/favicon.png"/>
+</head>
+
+<body background="/assets/images/background_bb.jpg">
+
+    <table width = '100%' style="border: 0px;">
+        <tr>
+        <th><div class ='div_float_left'><IMG WIDTH="48" HEIGHT="48" src="/assets/images/empty_32x32.png"></div></th>
+        <th><div class ='div_float_left'><a onclick="javascript:history.back(); return false;"><IMG class ="image_little_button"  WIDTH="48" HEIGHT="48"  title = "Назад" src="/assets/images/back.png"></a></div></th>
+		<th><div class ='div_float_left'><IMG  WIDTH="48" HEIGHT="48" src="/assets/images/empty_32x32.png"></div></th>
+		<th><div class ='div_float_left'><a href="Report_of_Rejects_from_Paperprint_Documents_Excel"><IMG class ="image_little_button"  WIDTH="48" HEIGHT="48"  title = "Excel" src="/assets/images/excel_16_16.bmp"></a></div></th>
+        <th><div class ='div_float_left'><IMG  WIDTH="48" HEIGHT="48" src="/assets/images/empty_32x32.png"></div></th>
+        </tr>
+    </table>
+
+<br>
+<h1>Переход на безбумажные платёжные документы</h1>
+<br>
+<table>
+<tr><td><b>ФИО</b></td> <td><b>Всего Договоров</b></td> <td><b>ЛК</b></td> <td><b>ЭДО</b></td> <td><b>Отказ от БМ</b></td></tr>
+	
+{{range .}}
+{{if .Fio}}
+<tr><td>{{.Fio}}</td> <td>{{.Total}}</td> <td>{{.Lk}}</td> <td>{{.Edo}}</td> <td>{{.Reject}}</td></tr>
+{{else}}
+<tr><td>------------</td> <td>----</td> <td>----</td> <td>----</td> <td>----</td></tr>
+{{end}}
+{{end}}
+</table>
+
+</body>
+</html>
